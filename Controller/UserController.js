@@ -33,7 +33,11 @@ export const login = async (req,res) => {
         
         jwt.sign({_id: emailCheck._id}, process.env.JWT_SECRET,{},(err,token) => {
             if(err) throw err;
-            res.cookie('token',token).json({user:emailCheck,token})
+            res.cookie('token',token, {
+                httpOnly: true,
+                    sameSite: "none",
+                    secure: true,
+            }).json({user:emailCheck,token})
         })
         // res.json({token, user: {
         //         username: emailCheck.username,
@@ -105,6 +109,10 @@ export const deleteWish = async(req,res) =>{
 
 
 export const logout = (req,res)=> {
-    res.cookie('token', '').json("Logout")
+    res.cookie('token', '', {
+        httpOnly: true,
+                    sameSite: "none",
+                    secure: true,
+    }).json("Logout")
 }
 
