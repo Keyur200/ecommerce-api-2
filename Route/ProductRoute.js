@@ -1,7 +1,7 @@
-const express = require('express')
-const { isAdmin, requireLogin } = require('../Middleware/AuthMiddleware.js')
-const { AllOrders, Myorders, ProductFilter, UpdateStatus, allproduct, braintreePayment, braintreeToken, createProduct, deleteProduct, getSingleProduct, getcateProduct, productDetail, productPhoto, updateProduct } = require('../Controller/ProductController.js')
-const formidable = require('express-formidable')
+import express from 'express'
+import { isAdmin, requireLogin } from '../Middleware/AuthMiddleware.js';
+import { AllOrders, Myorders, ProductFilter, UpdateStatus, allproduct, braintreePayment, braintreeToken, createProduct, deleteProduct, getSingleProduct, getcateProduct, productDetail, productPhoto, updateProduct } from '../Controller/ProductController.js';
+import formidable from 'express-formidable'
 const router = express.Router()
 
 router.post('/create-product',requireLogin, isAdmin,formidable(), createProduct)
@@ -19,4 +19,4 @@ router.get('/all-orders',requireLogin,isAdmin, AllOrders)
 router.put('/updatestatus/:oid',requireLogin,isAdmin, UpdateStatus)
 router.post('/productfilter', ProductFilter)
 
-module.exports = router;
+export default router;

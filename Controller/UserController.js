@@ -1,8 +1,8 @@
-const UserModel = require("../Model/UserModel.js")
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
-const router = require("../Route/UserRoute.js")
-const dotenv = require('dotenv')
+import UserModel from "../Model/UserModel.js"
+import bcrypt from 'bcryptjs'
+import jwt from 'jsonwebtoken'
+import router from "../Route/UserRoute.js";
+import dotenv from 'dotenv'
 dotenv.config()
 export const register = async (req,res) => {
     const {username,email,password,address,phno, role} = req.body;

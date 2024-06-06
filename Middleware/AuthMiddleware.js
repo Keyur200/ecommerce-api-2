@@ -1,5 +1,5 @@
-const jwt = require('jsonwebtoken')
-const UserModel = require('../Model/UserModel.js')
+import jwt from 'jsonwebtoken'
+import UserModel from '../Model/UserModel.js'
 
 export const requireLogin = async(req,res,next) => {
     const {token} = req.cookies;
