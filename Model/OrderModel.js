@@ -1,4 +1,6 @@
-import mongoose, { Schema, model } from "mongoose";
+import { Schema } from "mongoose"
+
+const mongoose = require("mongoose")
 
 const OrderSchema = new Schema({
     products: [{type:Schema.Types.ObjectId, ref: "Product"},],
@@ -7,6 +9,6 @@ const OrderSchema = new Schema({
     status:{type:String, default:"Not Process", enum: ["Not Process","Processing","Shipped","Deliverd","Cancel"]}
 },{timestamps:true})
 
-const Order = model("Order", OrderSchema)
+const Order = mongoose.model("Order", OrderSchema)
 
 export default Order

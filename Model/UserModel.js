@@ -1,4 +1,4 @@
-import mongoose, { Schema, model } from "mongoose";
+const mongoose = require("mongoose")
 
 const UserSchema = new Schema({
     username: {type:String, required:true},
@@ -7,8 +7,8 @@ const UserSchema = new Schema({
     phno: {type:String, required:true},
     address: {type:String, required:true},
     role: {type:String, required: true},
-    wishlist: [{type:Schema.Types.ObjectId, ref:"Product"}]
+    wishlist: [{type:mongoose.Schema.Types.ObjectId, ref:"Product"}]
 }, {timestamps:true})
 
-const UserModel = model("User", UserSchema)
+const UserModel = mongoose.model("User", UserSchema)
 export default UserModel

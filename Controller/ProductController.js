@@ -1,13 +1,13 @@
-import Product from "../Model/ProductModel.js";
-import slugify from 'slugify'
-import fs from 'fs'
-import CategoryModel from "../Model/CategoryModel.js";
-import OrderModel from "../Model/OrderModel.js";
-import braintree from 'braintree'
-import dotenv from 'dotenv'
-import UserModel from "../Model/UserModel.js";
-import { error } from "console";
-import numeral from 'numeral'
+const Product = require("../Model/ProductModel.js");
+const slugify = require('slugify')
+const fs = require('fs')
+const CategoryModel = require("../Model/CategoryModel.js");
+const OrderModel = require("../Model/OrderModel.js");
+const braintree = require('braintree')
+const dotenv = require('dotenv')
+const UserModel = require("../Model/UserModel.js");
+const { error } = require("console")
+const numeral = require('numeral')
 dotenv.config()
 
 var gateway = new braintree.BraintreeGateway({

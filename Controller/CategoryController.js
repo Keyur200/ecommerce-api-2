@@ -1,5 +1,5 @@
-import slugify from "slugify";
-import CategoryModel from "../Model/CategoryModel.js";
+const slugify = require("slugify");
+const CategoryModel = require("../Model/CategoryModel.js");
 
 export const createcate = async(req,res) => {
     try {
